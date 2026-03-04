@@ -54,7 +54,7 @@ except Exception:
     _HAS_TF = False
 
 st.set_page_config(page_title="Dashboard Analisis Data", layout="wide")
-st.title("Dashboard Analitik Missnomi")
+st.title("Dashboard Analitik Lentera Insight")
 
 # -----------------------------
 # Helpers
@@ -178,7 +178,6 @@ st.subheader("Preview Data Setelah Filter")
 with st.expander("Dataset", expanded=False):
         st.dataframe(df_filtered.head(30000)) #--->>> setiap menu ada
         
-
 # -----------------------------
 # Numeric & quick checks
 # -----------------------------
@@ -190,7 +189,6 @@ if df_filtered.empty:
 # Overviews
 # -----------------------------
 if analysis == "Overview":
-
     st.header("Executive Overview")
 
     total_sales = df_filtered["Nominal"].sum()
@@ -229,16 +227,13 @@ if analysis == "Overview":
     df_monthly.sort_values("Nominal", ascending=False)
     # Ubah period ke timestamp supaya bisa diplot
     df_monthly["Bulan"] = df_monthly["Bulan"].dt.to_timestamp()
-    
     st.line_chart(df_monthly.set_index("Bulan")["Nominal"])
 
 # -----------------------------
 # Forecasting
 # -----------------------------
 elif analysis == "Forecasting":
-
     st.header("Forecasting per Produk / Grup")
-
     metric = metric_choice
     st.write(f"Metric untuk forecasting: **{metric}**")
 
@@ -252,7 +247,6 @@ elif analysis == "Forecasting":
     )
 
     ts_daily = df_daily.resample("D").sum()
-
     if ts_daily.empty:
         st.warning("Data kosong untuk forecasting.")
         st.stop()
@@ -328,7 +322,6 @@ elif analysis == "Forecasting":
         "Pilih Model (kosong = auto compare)",
         model_options
     )
-
     if not selected_models:
         selected_models = model_options
 
@@ -336,9 +329,7 @@ elif analysis == "Forecasting":
     # RUN MODELS
     # =========================================
     results = []
-
     for model_name in selected_models:
-
         try:
             if model_name == "ARIMA":
                 model = ARIMA(train["value"], order=(2,1,2)).fit()
