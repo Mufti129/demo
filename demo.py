@@ -52,8 +52,52 @@ try:
     _HAS_TF = True
 except Exception:
     _HAS_TF = False
+st.set_page_config(
+    page_title="Analytics Dashboard",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+st.markdown("""
+<style>
 
-st.set_page_config(page_title="Dashboard Analisis Data", layout="wide")
+.main {
+    background-color: #f6f8fb;
+}
+
+h1, h2, h3 {
+    color: #1f2937;
+}
+
+.block-container {
+    padding-top: 1rem;
+}
+
+/* KPI CARD */
+[data-testid="stMetric"] {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* SIDEBAR */
+section[data-testid="stSidebar"] {
+    background-color: #111827;
+}
+
+section[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+/* BUTTON */
+.stDownloadButton button {
+    border-radius: 10px;
+}
+
+</style>
+""", unsafe_allow_html=True)
+#st.set_page_config(page_title="Dashboard Analisis Data", layout="wide")
 st.title("Dashboard Analitik Lentera Insight")
 
 # -----------------------------
