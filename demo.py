@@ -466,7 +466,13 @@ elif analysis == "Sales by Channel":
 
     min_date = df[date_col].min()
     max_date = df[date_col].max()
+     # ===============================
+    # STEP 0 cek data waktu ada tidaknya min atau max date
+    # ===============================
 
+    if pd.isna(min_date) or pd.isna(max_date):
+        st.error("Kolom Tgl. Pesanan tidak valid.")
+        st.stop()
     # ===============================
     # STEP 1 — FILTER PERIODE
     # ===============================
