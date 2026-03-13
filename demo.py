@@ -54,7 +54,7 @@ except Exception:
     _HAS_TF = False
 st.set_page_config(
     page_title="Analytics Dashboard",
-    page_icon="📊",
+    page_icon="LI",
     layout="wide",
     initial_sidebar_state="expanded"
 )
