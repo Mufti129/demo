@@ -196,24 +196,24 @@ if len(date_range) != 2:
 start_date, end_date = date_range
 
 # Product selection
-products = sorted(df["Nama Barang"].dropna().unique().tolist())
-prod_multi = st.sidebar.multiselect("Pilih Nama Barang (boleh lebih dari 1):", options=products, default=None)
+#products = sorted(df["Nama Barang"].dropna().unique().tolist())
+#prod_multi = st.sidebar.multiselect("Pilih Nama Barang (boleh lebih dari 1):", options=products, default=None)
 
 # Metric selection
-metric_choice = st.sidebar.radio("Pilih metrik:", ["QTY", "Nominal"])
+#metric_choice = st.sidebar.radio("Pilih metrik:", ["QTY", "Nominal"])
 
 # Preprocessing options
-st.sidebar.markdown("### Preprocessing / Cleansing")
-apply_outlier = st.sidebar.checkbox("Remove outliers (IQR clipping)", value=True)
-apply_log = st.sidebar.checkbox("Apply log1p transform (improves stability)", value=False)
-apply_smoothing = st.sidebar.checkbox("Apply smoothing (rolling mean)", value=False)
-smoothing_window = st.sidebar.slider("Smoothing window (days)", 3, 30, 7)
+#st.sidebar.markdown("### Preprocessing / Cleansing")
+#apply_outlier = st.sidebar.checkbox("Remove outliers (IQR clipping)", value=True)
+#apply_log = st.sidebar.checkbox("Apply log1p transform (improves stability)", value=False)
+#apply_smoothing = st.sidebar.checkbox("Apply smoothing (rolling mean)", value=False)
+#smoothing_window = st.sidebar.slider("Smoothing window (days)", 3, 30, 7)
 
 # Modeling options
-st.sidebar.markdown("### Modeling Options")
-enable_auto_model = st.sidebar.checkbox("Enable Auto Model Selection (compare RMSE)", value=True)
-include_heavy_models = st.sidebar.checkbox("Include heavy models (XGBoost / LSTM) if available", value=False)
-lstm_toggle = st.sidebar.checkbox("Enable LSTM (only if TensorFlow is installed)", value=False)
+#st.sidebar.markdown("### Modeling Options")
+#enable_auto_model = st.sidebar.checkbox("Enable Auto Model Selection (compare RMSE)", value=True)
+#include_heavy_models = st.sidebar.checkbox("Include heavy models (XGBoost / LSTM) if available", value=False)
+#lstm_toggle = st.sidebar.checkbox("Enable LSTM (only if TensorFlow is installed)", value=False)
 
 # Analysis selector
 st.sidebar.markdown("### Analisis")
