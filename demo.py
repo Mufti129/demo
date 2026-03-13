@@ -1,4 +1,4 @@
-# dashboard_development_missnomi
+# dashboard_development_Lentera Insight
 #Mukhammad Rekza Mufti
 
 import warnings
@@ -79,6 +79,15 @@ h1, h2, h3 {
     border: 1px solid #e5e7eb;
     padding: 20px;
     border-radius: 12px;
+}
+[data-testid="stMetricValue"] {
+    color: #111827 !important;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #6b7280 !important;
 }
 
 /* SIDEBAR */
