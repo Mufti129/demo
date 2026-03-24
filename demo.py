@@ -977,7 +977,7 @@ elif analysis == "Gross Profit & Margin":
         daily["Gross Profit"] / daily["Revenue"] * 100
     ).replace([float("inf"), -float("inf")], 0).fillna(0)
 
-    st.dataframe(daily, use_container_width=True)
+    st.dataframe(daily, use_container_width="stretch")
 
     # =========================
     # MONTHLY SUMMARY
@@ -1002,7 +1002,7 @@ elif analysis == "Gross Profit & Margin":
 
     monthly["Month"] = monthly["Month"].astype(str)
 
-    st.dataframe(monthly, use_container_width=True)
+    st.dataframe(monthly, use_container_width="stretch")
 
     # =========================
     # AUTO INSIGHT SECTION
@@ -1673,7 +1673,7 @@ elif analysis == "Monitoring & Analisis Retur":
                     highlight_aging,
                     subset=["Aging (Hari)"]
                 ),
-                use_container_width=True
+                use_container_width="stretch"
             )
     
             # Download CSV
@@ -1696,7 +1696,7 @@ elif analysis == "Monitoring & Analisis Retur":
         .reset_index()
     )
 
-    st.dataframe(sku_summary, use_container_width=True)
+    st.dataframe(sku_summary, use_container_width="stretch")
 
     # =============================
     # RETUR PER CHANNEL
@@ -1710,7 +1710,7 @@ elif analysis == "Monitoring & Analisis Retur":
         .reset_index()
     )
 
-    st.dataframe(channel_summary, use_container_width=True)
+    st.dataframe(channel_summary, use_container_width="stretch")
 
     # =============================
     # TREND HARIAN
