@@ -158,13 +158,28 @@ def create_lag_features(df, col='value', lags=[1,7,14,30]):
 # Load Google Sheet
 # -----------------------------
 GSHEET_URL = st.text_input("Masukkan CSV export Google Sheet URL :",
-                           value="https://docs.google.com/spreadsheets/d/1APilL0UzyGIBslMDIPF7B2Ftvo7XK0lo6q_d2IOjW1A/export?format=csv&gid=1146076705")
+                           value="https://docs.google.com/spreadsheets/d/1V62uTkSoKFeIRUbAgqURhS0Jk8ixIKClrCiR0wovsQE/export?format=csv&gid=1146076705")
 # --- URL master produk (BARU) ---
 GSHEET_URL_MASTER = st.text_input("Masukkan CSV export Google Sheet MASTER PRODUK :",
-                           value="https://docs.google.com/spreadsheets/d/1SQ-6kW6YHmqVJHWjE4v5pTGrk10niXl1w-Pvt2N70zs/export?format=csv&gid=0")
+                           value="https://docs.google.com/spreadsheets/d/1vLf6bI6qcfDnkFKViW4yqPPd-fjycyzu6oO8O5bd7GU/export?format=csv&gid=0")
 # --- URL Stok (BARU) ---
 GSHEET_URL_STOK = st.text_input("Masukkan CSV export Google Sheet STOK PRODUK :",
-                           value="https://docs.google.com/spreadsheets/d/1atwj9gSWV3R2Bbku_QTrpAKpfv2L_ip69cmT8wkIe0M/export?format=csv&gid=490335004")
+                           value="https://docs.google.com/spreadsheets/d/1zVZsmdcAycwWTt1-dmUbPFF6tY7QCxObkP9kV9jZpUc/export?format=csv&gid=490335004")
+### new ##
+#data sales : https://docs.google.com/spreadsheets/d/1V62uTkSoKFeIRUbAgqURhS0Jk8ixIKClrCiR0wovsQE/edit?gid=1146076705#gid=1146076705
+#dataase master : https://docs.google.com/spreadsheets/d/1vLf6bI6qcfDnkFKViW4yqPPd-fjycyzu6oO8O5bd7GU/edit?gid=0#gid=0
+#datase stok : https://docs.google.com/spreadsheets/d/1zVZsmdcAycwWTt1-dmUbPFF6tY7QCxObkP9kV9jZpUc/edit?gid=490335004#gid=490335004
+#awah yg diganti
+#GSHEET_URL = st.text_input("Masukkan CSV export Google Sheet URL :",
+  #                         value="https://docs.google.com/spreadsheets/d/1APilL0UzyGIBslMDIPF7B2Ftvo7XK0lo6q_d2IOjW1A/export?format=csv&gid=1146076705")
+# --- URL master produk (BARU) ---
+#GSHEET_URL_MASTER = st.text_input("Masukkan CSV export Google Sheet MASTER PRODUK :",
+ #                          value="https://docs.google.com/spreadsheets/d/1SQ-6kW6YHmqVJHWjE4v5pTGrk10niXl1w-Pvt2N70zs/export?format=csv&gid=0")
+# --- URL Stok (BARU) ---
+#GSHEET_URL_STOK = st.text_input("Masukkan CSV export Google Sheet STOK PRODUK :",
+ #                          value="https://docs.google.com/spreadsheets/d/1atwj9gSWV3R2Bbku_QTrpAKpfv2L_ip69cmT8wkIe0M/export?format=csv&gid=490335004")
+#####
+
 
 try:
     df = load_data(GSHEET_URL)
@@ -2386,7 +2401,7 @@ else:
     # If log transform applied, remind user results are in log-scale
     if apply_log:
         st.warning("Transform log1p diterapkan pada data — hasil forecast dalam skala log1p. Untuk interpretasi, gunakan inverse np.expm1.")
-    st.info("by Mukhammad Rekza Mufti-Data Analis")
+    st.info("by Mukhammad Rekza Mufti - Lentera Insight")
 
 
 
