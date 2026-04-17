@@ -1623,8 +1623,8 @@ elif analysis == "Monitoring & Analisis Retur":
     #df_retur["amount"] = pd.to_numeric(df_retur["amount"], errors="coerce").fillna(0)
     
     # --- Filter belum masuk ---
-    #df_belum = df_retur[df_retur["Status masuk sistem"] == "belum"].copy()
-    df_belum = df_retur[df_retur["Status masuk sistem"] == "belum"]
+    df_belum = df_retur[df_retur["Status masuk sistem"] == "belum"].copy()
+    #df_belum = df_retur[df_retur["Status masuk sistem"] == "belum"]
     
     # Hitung aging
     today = pd.to_datetime("today").normalize()
@@ -1684,7 +1684,8 @@ elif analysis == "Monitoring & Analisis Retur":
                     return ""
     
             st.dataframe(
-                df_belum_display.style.applymap(
+#                df_belum_display.style.applymap(
+                df_belum_display.style.map(
                     highlight_aging,
                     subset=["Aging (Hari)"]
                 ),
